@@ -1,8 +1,8 @@
 use std::io;
-use std::process;
-
 fn main() {
-    loop {
+    let mut quit = false;
+
+    while !quit {
         // Need to setup the original menu
         setup_menu();
 
@@ -26,7 +26,7 @@ fn main() {
             1 => println!("Starting new game..."),
             2 => {
                 println!("Quitting game...");
-                process::exit(1);
+                quit = true;
             },
             _ => {
                 println!("No options entered");
